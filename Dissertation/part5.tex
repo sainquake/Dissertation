@@ -3,7 +3,6 @@
 \section{КИМ трехфазного моментного привода} \label{ch:ch5/sect1}
 
 Используя уравнения полученые в разделе \ref{ch:ch3/sect9} составим компьютерную модель привода.
-
 В соответствии с системой уравнений (\ref{eq:p3:9.1}) составим структурную схему привода:
 \begin{figure}[ht]
 	\centering
@@ -25,7 +24,7 @@
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.4\linewidth]{CC} 
+	\includegraphics[width=0.3\linewidth]{CC} 
 	\caption{Схема пересчета токов}
 	\label{fig:CC}
 \end{figure}
@@ -34,7 +33,7 @@
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\linewidth]{EMT} 
+	\includegraphics[width=0.5\linewidth]{EMT} 
 	\caption{Блок моделирования электромагнитного крутящего момента силы привода}
 	\label{fig:EMT}
 \end{figure}
@@ -110,38 +109,38 @@
 
 Результат моделирования без учета движения борта представлен на рисунках \ref{fig:s5delta}
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.8\linewidth]{c5delta} 
-	\caption{Рассогласование системы по двум каналам (градусы)}
-	\label{fig:s5delta}
-\end{figure}
 
-Рассогласование САУ по каналу азимута не превышает 1 градуса, а по углу места не превышает 0.3 градусов (рисунок \ref{fig:s5io}). По сравнению с моделированием изолированных каналов ошибка возросла в следствии влияния перекрестных связей.
-
-\begin{figure}
+\begin{figure}[ht]%
 	\centering
-	\includegraphics[width=0.8\linewidth]{c5io} 
-	\caption{Графики переходных процессов системы по двум каналам (градусы)}
-	\label{fig:s5io}
+	\subfloat[Рассогласование системы]{{\includegraphics[width=0.45\linewidth]{c5delta} }}%
+	\qquad
+	\subfloat[Графики переходных процессов системы]{{\includegraphics[width=0.45\linewidth]{c5io} }}%
+	\caption{Графики переходных процессов системы по двум каналам (градусы)}%
+	\label{fig:s5delta}%
 \end{figure}
 
 
+
+Рассогласование САУ по каналу азимута не превышает 1 градуса, а по углу места не превышает 0.3 градусов (рисунок \ref{fig:s5delta}). По сравнению с моделированием изолированных каналов ошибка возросла в следствии влияния перекрестных связей.
+
+
+
+\newpage
 
 \section{Разработка компьютерной имитационной модели ЦСАУ ОЭП с учетом  движения борта} \label{ch:ch5/sect3}
 
 
-
+На основе синтезированных регуляторов САУ и с учетом указанных нелинейностей разработаны КИМ ЦСАУ (рисунок \ref{fig:digital_az}). Модели с учетом нелинейностей КИМ позволяют изменять величины дискретности датчика, частоту ШИМ усилителя и насыщения в УМ и проводить исследования динамики нелинейной САУ при заданных пределах этих параметров. 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1.0\linewidth]{C5_2} 
+	\includegraphics[width=0.8\linewidth]{C5_2} 
 	\caption{Блок моделирующий корректирующее устройство системы управления}
 	\label{fig:coorection}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1.0\linewidth]{C5_3} 
+	\includegraphics[width=0.8\linewidth]{C5_3} 
 	\caption{Блок моделирующий объект управления (линеаризованная система)}
 	\label{fig:object_lin}
 \end{figure}
@@ -149,12 +148,12 @@
  Модель объекта управления описывается уравнением (\ref{eq:p3:48}). Воплащение данного уравнения в модели осуществляется блоком "Object". На рисунке \ref{fig:object} показан состав этого блока.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1.0\linewidth]{C5_4} 
+	\includegraphics[width=0.8\linewidth]{C5_4} 
 	\caption{Модель объекта управления в соответствии с (\ref{eq:p3:48})}
 	\label{fig:object}
 \end{figure}
 
-
+\newpage
 
 \section{Исследование динамики наведения и стабилизации ОЭП} \label{ch:ch5/sect4}
 \begin{figure}[ht]
