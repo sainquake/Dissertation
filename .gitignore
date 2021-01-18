@@ -271,3 +271,5 @@ TSWLatexianTemp*
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+*.gz
