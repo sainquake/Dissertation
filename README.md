@@ -1,5 +1,13 @@
 https://miktex.org/download 
+
 https://www.texstudio.org/
+
+pdflatex test
+
+biber test
+
+pdflatex test
+
 
 ## TODO
 
